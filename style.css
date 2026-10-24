@@ -1,0 +1,411 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+
+/* ============ RESET & BODY ============ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body, .stApp {
+    font-family: 'Inter', sans-serif !important;
+    background: #0a0e1a !important;
+    color: #e2e8f0 !important;
+}
+
+.stApp {
+    background:
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(99,102,241,0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(16,185,129,0.08) 0%, transparent 60%),
+        #0a0e1a !important;
+    min-height: 100vh;
+}
+
+/* ============ HIDE DEFAULTS ============ */
+#MainMenu, header, footer { visibility: hidden !important; }
+[data-testid="stToolbar"] { display: none !important; }
+
+/* ============ MAIN CONTAINER ============ */
+.block-container {
+    max-width: 860px !important;
+    padding: 3rem 2rem !important;
+}
+
+/* ============ HERO SECTION ============ */
+.hero-wrap {
+    text-align: center;
+    padding: 2rem 0 2.5rem;
+    animation: fadeInDown 0.7s ease-out both;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(99,102,241,0.12);
+    border: 1px solid rgba(99,102,241,0.35);
+    border-radius: 999px;
+    padding: 6px 16px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #a5b4fc;
+    margin-bottom: 1.4rem;
+}
+
+.hero-title {
+    font-size: 3.2rem !important;
+    font-weight: 800 !important;
+    line-height: 1.15 !important;
+    background: linear-gradient(135deg, #c7d2fe 0%, #818cf8 40%, #38bdf8 100%);
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    margin: 0 0 1rem !important;
+    letter-spacing: -1px;
+}
+
+.hero-sub {
+    font-size: 1.05rem;
+    color: #64748b;
+    font-weight: 400;
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* ============ SCAN CARD ============ */
+.scan-card {
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(99,102,241,0.18);
+    border-radius: 20px;
+    padding: 2.2rem 2.5rem;
+    box-shadow: 0 20px 60px -10px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.03) inset;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+.scan-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #475569;
+    margin-bottom: 0.6rem;
+}
+
+/* ============ INPUT FIELD ============ */
+.stTextInput > div > div {
+    background: rgba(8, 14, 28, 0.8) !important;
+    border: 1.5px solid rgba(99,102,241,0.25) !important;
+    border-radius: 14px !important;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.stTextInput > div > div:focus-within {
+    border-color: #818cf8 !important;
+    box-shadow: 0 0 0 3px rgba(129,140,248,0.15), 0 0 20px rgba(129,140,248,0.08) !important;
+}
+
+.stTextInput > div > div > input {
+    background: transparent !important;
+    color: #e2e8f0 !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 1rem !important;
+    padding: 16px 18px !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.stTextInput > div > div > input::placeholder {
+    color: #334155 !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.95rem !important;
+}
+
+/* Hide label but keep accessible */
+.stTextInput label {
+    font-size: 0.82rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    color: #475569 !important;
+}
+
+/* ============ SCAN BUTTON ============ */
+.stFormSubmitButton > button, .stButton > button {
+    width: 100% !important;
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 50%, #4338ca 100%) !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 14px !important;
+    padding: 14px 28px !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px !important;
+    cursor: pointer !important;
+    transition: all 0.25s ease !important;
+    box-shadow: 0 4px 20px rgba(99,102,241,0.45), 0 1px 0 rgba(255,255,255,0.1) inset !important;
+    margin-top: 0.5rem !important;
+}
+
+.stFormSubmitButton > button:hover, .stButton > button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 30px rgba(99,102,241,0.65) !important;
+    background: linear-gradient(135deg, #818cf8 0%, #6366f1 60%, #4f46e5 100%) !important;
+}
+
+.stFormSubmitButton > button:active, .stButton > button:active {
+    transform: scale(0.98) !important;
+}
+
+/* ============ RESULT CARDS ============ */
+.result-safe {
+    background: linear-gradient(135deg, rgba(16,185,129,0.08) 0%, rgba(5,150,105,0.15) 100%);
+    border: 1px solid rgba(16,185,129,0.3);
+    border-radius: 18px;
+    padding: 2rem 2.2rem;
+    margin-top: 1.5rem;
+    animation: slideUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    position: relative;
+    overflow: hidden;
+}
+
+.result-safe::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #10b981, #34d399, #6ee7b7);
+    border-radius: 3px 3px 0 0;
+}
+
+.result-phishing {
+    background: linear-gradient(135deg, rgba(239,68,68,0.08) 0%, rgba(220,38,38,0.15) 100%);
+    border: 1px solid rgba(239,68,68,0.3);
+    border-radius: 18px;
+    padding: 2rem 2.2rem;
+    margin-top: 1.5rem;
+    animation: slideUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    position: relative;
+    overflow: hidden;
+}
+
+.result-phishing::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ef4444, #f87171, #fca5a5);
+    border-radius: 3px 3px 0 0;
+}
+
+.result-icon-safe { font-size: 3rem; margin-bottom: 0.5rem; }
+.result-icon-phishing { font-size: 3rem; margin-bottom: 0.5rem; }
+
+.result-heading-safe {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #10b981;
+    margin: 0 0 0.4rem;
+}
+
+.result-heading-phishing {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ef4444;
+    margin: 0 0 0.4rem;
+}
+
+.result-desc {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #94a3b8;
+    margin: 0;
+}
+
+/* ============ CONFIDENCE BAR ============ */
+.conf-bar-wrap {
+    margin-top: 1.4rem;
+}
+
+.conf-bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 6px;
+}
+
+.conf-bar-track {
+    height: 8px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.05);
+    overflow: hidden;
+}
+
+.conf-bar-fill-safe {
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #059669, #10b981, #34d399);
+    transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.conf-bar-fill-phishing {
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #b91c1c, #ef4444, #f87171);
+    transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ============ PHISHING FLAGS LIST ============ */
+.flags-list {
+    margin: 1rem 0 0.5rem;
+    padding-left: 1.2rem;
+    list-style: none;
+}
+
+.flags-list li {
+    position: relative;
+    padding-left: 1.2rem;
+    font-size: 0.88rem;
+    color: #fca5a5;
+    margin-bottom: 0.4rem;
+    line-height: 1.5;
+}
+
+.flags-list li::before {
+    content: "!";
+    position: absolute;
+    left: 0;
+    color: #ef4444;
+    font-weight: 800;
+    font-size: 0.8rem;
+}
+
+/* ============ METRICS GRID ============ */
+.metrics-section {
+    margin-top: 1.8rem;
+}
+
+.metrics-heading {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #334155;
+    margin-bottom: 0.8rem;
+}
+
+.metric-card {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 14px;
+    padding: 1rem;
+    text-align: center;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.metric-card:hover {
+    border-color: rgba(99,102,241,0.2);
+    transform: translateY(-2px);
+}
+
+.metric-card .m-icon { font-size: 1.3rem; margin-bottom: 4px; }
+.metric-card .m-label {
+    font-size: 0.70rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #475569;
+    margin-bottom: 4px;
+}
+.metric-card .m-value {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #e2e8f0;
+    font-family: 'JetBrains Mono', monospace;
+}
+.metric-card .m-value.good { color: #10b981; }
+.metric-card .m-value.bad  { color: #f87171; }
+.metric-card .m-value.warn { color: #f59e0b; }
+
+/* ============ URL DISPLAY ============ */
+.scanned-url {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(8, 14, 28, 0.7);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px;
+    padding: 10px 16px;
+    margin-bottom: 1.2rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: #7c3aed;
+    word-break: break-all;
+}
+
+.scanned-url span { color: #475569; font-size: 0.75rem; }
+
+/* ============ INFO PILLS ============ */
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(99,102,241,0.1);
+    border: 1px solid rgba(99,102,241,0.2);
+    border-radius: 999px;
+    padding: 4px 12px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #a5b4fc;
+    margin-right: 6px;
+    margin-top: 6px;
+}
+
+/* ============ FOOTER STRIP ============ */
+.footer-strip {
+    text-align: center;
+    padding: 2rem 0 1rem;
+    font-size: 0.78rem;
+    color: #1e293b;
+    animation: fadeIn 1s ease 0.8s both;
+}
+
+.footer-strip a { color: #334155; text-decoration: none; }
+
+/* ============ STREAMLIT OVERRIDES ============ */
+.stSpinner > div { color: #818cf8 !important; }
+.stWarning { border-radius: 12px !important; }
+.stAlert { border-radius: 12px !important; }
+
+/* ============ ANIMATIONS ============ */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes pulse-ring {
+    0%   { box-shadow: 0 0 0 0   rgba(16,185,129,0.4); }
+    70%  { box-shadow: 0 0 0 12px rgba(16,185,129,0); }
+    100% { box-shadow: 0 0 0 0   rgba(16,185,129,0); }
+}
